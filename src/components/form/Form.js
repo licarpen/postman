@@ -5,7 +5,12 @@ import styles from './Form.css';
 const Form = ({ onSubmit, onChange, url }) => (
   <form onSubmit={onSubmit} onChange={onChange} className={styles.Form}>
     <input type="text" name="url" value={url} placeholder="url"/>
-    <button>GET RESULT</button>
+    <input type="radio" name="method" value="GET"/>GET
+    <input type="radio" name="method" value="POST"/>POST
+    <input type="radio" name="method" value="PUT"/>PUT
+    <input type="radio" name="method" value="PATCH"/>PATCH
+    <input type="radio" name="method" value="DELETE"/>DELETE
+    <button>RESULT</button>
   </form>
 );
 

@@ -3,9 +3,10 @@ import Form from '../components/form/Form';
 
 export default class Postman extends Component {
   state = {
-    loading: false,
-    result: '',
     url: '',
+    method: 'GET',
+    result: '',
+    loading: false,
     history: []
   }
 
@@ -14,20 +15,24 @@ export default class Postman extends Component {
     this.setState({ [target.name]: target.value });
   }
 
+  fetch = (url) => {
+    this.setState({ loading: true });
+    return fetch(url)
+      .then(response => response.json());
+  }
+
   handleSubmit = event => {
     event.preventDefault();
-    // make fetch to url, wait for result, and update result
-    this.setState(state => ({
-
-    }));
+    fetch(this.state.url)
+      .then(result => this.setState(state => ({ result: result, history: [...state.history, result], loading: false })));
   }
 
   render() {
-    const { url } = this.state;
+    const { url, method } = this.state;
 
     return (
       <>
-        <Form url={url} onChange={this.handleChange} onSubmit={this.handleSubmit} />
+        <Form url={url} method={method} onChange={this.handleChange} onSubmit={this.handleSubmit} />
       </>
     );
   }
