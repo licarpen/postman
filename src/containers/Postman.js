@@ -8,7 +8,7 @@ export default class Postman extends Component {
     url: '',
     method: 'GET',
     result: '',
-    loading: false,
+    body: '',
     history: []
   }
 
@@ -17,24 +17,40 @@ export default class Postman extends Component {
     this.setState({ [target.name]: target.value });
   }
 
-  fetch = (url) => {
-    // this.setState({ loading: true });
-    return fetch(url)
+  fetchPost = () => {
+    return fetch(this.state.url)
+      .then(response => response.json());
+  }
+
+  fetchWithBody = () => {
+    return fetch(this.state.url, { 
+      method: this.state.method, 
+      headers: { 'Content-Type': 'application/json' },
+      body: this.state.body 
+    })
       .then(response => response.json());
   }
 
   handleSubmit = event => {
     event.preventDefault();
-    this.fetch(this.state.url)
-      .then(result => this.setState(state => ({ result: JSON.stringify(result, null, 2), history: [...state.history, { method: state.method, url: state.url }], loading: false })));
+
+    if(this.state.method === 'GET'){
+      this.fetchPost()
+        .then(result => this.setState(state => ({ result: JSON.stringify(result, null, 2), history: [...state.history, { method: state.method, url: state.url }] })));
+    }
+
+    else {
+      this.fetchWithBody()
+        .then(result => this.setState(state => ({ result: JSON.stringify(result, null, 2), history: [...state.history, { method: state.method, url: state.url }] })));
+    }
   }
 
   render() {
-    const { url, method, result, history } = this.state;
+    const { url, method, body, result, history } = this.state;
 
     return (
       <>
-        <Form url={url} method={method} onChange={this.handleChange} onSubmit={this.handleSubmit} />
+        <Form url={url} method={method} body={body} onChange={this.handleChange} onSubmit={this.handleSubmit} />
         <Result result={result} />
         <HistoryList history={history} />
       </>
