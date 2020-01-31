@@ -1,0 +1,18 @@
+.Form {
+  margin: auto;
+  text-align: center;
+  padding: 15px;
+
+  input {
+    padding: 10px;
+  }
+
+  .body {
+    display: block;
+    margin: auto;
+    width: 420px;
+    height: 150px;
+    text-align: justify;
+  }
+
+}

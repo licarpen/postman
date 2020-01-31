@@ -3,6 +3,8 @@ import Form from '../components/form/Form';
 import Result from '../components/result/Result';
 import HistoryList from '../components/history/HistoryList';
 
+const bodyMethods = ['POST', 'PUT', 'PATCH'];
+
 export default class Postman extends Component {
   state = {
     url: '',
@@ -17,32 +19,24 @@ export default class Postman extends Component {
     this.setState({ [target.name]: target.value });
   }
 
-  fetchPost = () => {
-    return fetch(this.state.url)
-      .then(response => response.json());
+  handleClick = (method, url) => {
+    this.setState({ method, url });
+
   }
 
-  fetchWithBody = () => {
+  fetchRequest = () => {
     return fetch(this.state.url, { 
       method: this.state.method, 
-      headers: { 'Content-Type': 'application/json' },
-      body: this.state.body 
+      headers: bodyMethods.includes(this.state.method) ? { 'Content-Type': 'application/json' } : {},
+      body: bodyMethods.includes(this.state.method) ? this.state.body : null
     })
       .then(response => response.json());
   }
 
   handleSubmit = event => {
     event.preventDefault();
-
-    if(this.state.method === 'GET'){
-      this.fetchPost()
-        .then(result => this.setState(state => ({ result: JSON.stringify(result, null, 2), history: [...state.history, { method: state.method, url: state.url }] })));
-    }
-
-    else {
-      this.fetchWithBody()
-        .then(result => this.setState(state => ({ result: JSON.stringify(result, null, 2), history: [...state.history, { method: state.method, url: state.url }] })));
-    }
+    this.fetchRequest()
+      .then(result => this.setState(state => ({ result: JSON.stringify(result, null, 2), history: [...state.history, { method: state.method, url: state.url, body: state.body }] })));
   }
 
   render() {
@@ -52,7 +46,7 @@ export default class Postman extends Component {
       <>
         <Form url={url} method={method} body={body} onChange={this.handleChange} onSubmit={this.handleSubmit} />
         <Result result={result} />
-        <HistoryList history={history} />
+        <HistoryList history={history} onClick={this.handleClick}/>
       </>
     );
   }
