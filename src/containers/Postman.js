@@ -30,13 +30,20 @@ export default class Postman extends Component {
       headers: bodyMethods.includes(this.state.method) ? { 'Content-Type': 'application/json' } : {},
       body: bodyMethods.includes(this.state.method) ? this.state.body : null
     })
-      .then(response => response.json());
+      .then(response => {
+        if(response.ok) {
+          return response.json();
+        }
+        else throw `Response: ${response.status}`;
+      });
   }
 
   handleSubmit = event => {
     event.preventDefault();
     this.fetchRequest()
-      .then(result => this.setState(state => ({ result: JSON.stringify(result, null, 2), history: [...state.history, { method: state.method, url: state.url, body: state.body }] })));
+      .then(result => this.setState(state => ({ result: JSON.stringify(result, null, 2), history: [...state.history, { method: state.method, url: state.url, body: state.body }] })))
+      // eslint-disable-next-line no-console
+      .catch(err => {console.log(err);});
   }
 
   render() {
