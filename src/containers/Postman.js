@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Form from '../components/form/Form';
 import Result from '../components/result/Result';
 import HistoryList from '../components/history/HistoryList';
+import { fetchWithError } from '../services/fetchWithError';
 
 const bodyMethods = ['POST', 'PUT', 'PATCH'];
 
@@ -21,29 +22,14 @@ export default class Postman extends Component {
 
   handleClick = (method, url) => {
     this.setState({ method, url });
-
-  }
-
-  fetchRequest = () => {
-    return fetch(this.state.url, { 
-      method: this.state.method, 
-      headers: bodyMethods.includes(this.state.method) ? { 'Content-Type': 'application/json' } : {},
-      body: bodyMethods.includes(this.state.method) ? this.state.body : null
-    })
-      .then(response => {
-        if(response.ok) {
-          return response.json();
-        }
-        else throw `Response: ${response.status}`;
-      });
   }
 
   handleSubmit = event => {
     event.preventDefault();
-    this.fetchRequest()
+    return fetchWithError(this.state.url, this.state.method, this.state.body, bodyMethods)
       .then(result => this.setState(state => ({ result: JSON.stringify(result, null, 2), history: [...state.history, { method: state.method, url: state.url, body: state.body }] })))
       // eslint-disable-next-line no-console
-      .catch(err => {console.log(err);});
+      .catch(err => console.log(err));
   }
 
   render() {
