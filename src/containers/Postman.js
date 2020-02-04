@@ -3,6 +3,7 @@ import Form from '../components/form/Form';
 import Result from '../components/result/Result';
 import HistoryList from '../components/history/HistoryList';
 import { fetchWithError } from '../services/fetchWithError';
+import styles from './Postman.css';
 
 const bodyMethods = ['POST', 'PUT', 'PATCH'];
 
@@ -36,11 +37,11 @@ export default class Postman extends Component {
     const { url, method, body, result, history } = this.state;
 
     return (
-      <>
+      <div className={styles.Postman}>
         <Form url={url} method={method} body={body} onChange={this.handleChange} onSubmit={this.handleSubmit} />
         <Result result={result} />
         <HistoryList history={history} onClick={this.handleClick}/>
-      </>
+      </div>
     );
   }
 }
