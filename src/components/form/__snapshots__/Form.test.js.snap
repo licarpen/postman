@@ -19,7 +19,11 @@ exports[`Form component matches a snapshot 1`] = `
     type="radio"
     value="GET"
   />
-  GET
+  <label
+    htmlFor="GET"
+  >
+    GET
+  </label>
   <input
     checked={true}
     name="method"
@@ -27,7 +31,11 @@ exports[`Form component matches a snapshot 1`] = `
     type="radio"
     value="POST"
   />
-  POST
+  <label
+    htmlFor="POST"
+  >
+    POST
+  </label>
   <input
     checked={false}
     name="method"
@@ -35,7 +43,11 @@ exports[`Form component matches a snapshot 1`] = `
     type="radio"
     value="PUT"
   />
-  PUT
+  <label
+    htmlFor="PUT"
+  >
+    PUT
+  </label>
   <input
     checked={false}
     name="method"
@@ -43,7 +55,11 @@ exports[`Form component matches a snapshot 1`] = `
     type="radio"
     value="PATCH"
   />
-  PATCH
+  <label
+    htmlFor="PATCH"
+  >
+    PATCH
+  </label>
   <input
     checked={false}
     name="method"
@@ -51,7 +67,11 @@ exports[`Form component matches a snapshot 1`] = `
     type="radio"
     value="DELETE"
   />
-  DELETE
+  <label
+    htmlFor="DELETE"
+  >
+    DELETE
+  </label>
   <input
     className="body"
     name="body"

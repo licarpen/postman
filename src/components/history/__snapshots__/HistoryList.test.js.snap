@@ -1,16 +1,23 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`HistoryList component matches a snapshot 1`] = `
-<ul>
-  <li
-    key="NaN"
-  >
-    <HistoryItem
-      body="sample body"
-      method="POST"
-      onClick={[Function]}
-      url="sampleurl.com"
-    />
-  </li>
-</ul>
+<div
+  className="HistoryList"
+>
+  <h2>
+    History
+  </h2>
+  <ul>
+    <li
+      key="NaN"
+    >
+      <HistoryItem
+        body="sample body"
+        method="POST"
+        onClick={[Function]}
+        url="sampleurl.com"
+      />
+    </li>
+  </ul>
+</div>
 `;
