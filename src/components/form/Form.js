@@ -4,7 +4,7 @@ import styles from './Form.css';
 
 const Form = ({ onSubmit, onChange, url, body, method }) => (
   <form onSubmit={onSubmit} className={styles.Form}>
-    <input type="text" name="url" value={url} placeholder="url" onChange={onChange} />
+    <input className={styles.url} type="text" name="url" value={url} placeholder="url" onChange={onChange} />
     <input type="radio" name="method" value="GET" checked={method === 'GET'} onChange={onChange} /><label htmlFor="GET">GET</label>
     <input type="radio" name="method" value="POST" checked={method === 'POST'} onChange={onChange} /><label htmlFor="POST">POST</label>
     <input type="radio" name="method" value="PUT" checked={method === 'PUT'} onChange={onChange} /><label htmlFor="PUT">PUT</label>

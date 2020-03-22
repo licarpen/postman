@@ -12,7 +12,7 @@ const HistoryList = ({ history, onClick }) => {
 
   return (
     <div className={styles.HistoryList}>
-      <h2>History</h2>
+      <h2 className={styles.title}>HISTORY</h2>
       <ul >
         {historyElements}
       </ul>

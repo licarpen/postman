@@ -9,4 +9,6 @@ Postman is an API server client application, similar to httpie or the popular Po
 
 # Tech Stack
 
+ * JavaScript
+ * ReactJS
 
