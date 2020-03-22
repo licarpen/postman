@@ -1,0 +1,87 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Form component matches a snapshot 1`] = `
+<form
+  className="Form"
+  onSubmit={[Function]}
+>
+  <input
+    name="url"
+    onChange={[Function]}
+    placeholder="url"
+    type="text"
+    value="mywebsite.com"
+  />
+  <input
+    checked={false}
+    name="method"
+    onChange={[Function]}
+    type="radio"
+    value="GET"
+  />
+  <label
+    htmlFor="GET"
+  >
+    GET
+  </label>
+  <input
+    checked={true}
+    name="method"
+    onChange={[Function]}
+    type="radio"
+    value="POST"
+  />
+  <label
+    htmlFor="POST"
+  >
+    POST
+  </label>
+  <input
+    checked={false}
+    name="method"
+    onChange={[Function]}
+    type="radio"
+    value="PUT"
+  />
+  <label
+    htmlFor="PUT"
+  >
+    PUT
+  </label>
+  <input
+    checked={false}
+    name="method"
+    onChange={[Function]}
+    type="radio"
+    value="PATCH"
+  />
+  <label
+    htmlFor="PATCH"
+  >
+    PATCH
+  </label>
+  <input
+    checked={false}
+    name="method"
+    onChange={[Function]}
+    type="radio"
+    value="DELETE"
+  />
+  <label
+    htmlFor="DELETE"
+  >
+    DELETE
+  </label>
+  <input
+    className="body"
+    name="body"
+    onChange={[Function]}
+    placeholder="body"
+    type="text"
+    value="text body to send"
+  />
+  <button>
+    RESULT
+  </button>
+</form>
+`;

@@ -1,0 +1,9 @@
+.Postman {
+  display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: min-content;
+    grid-template-areas: 
+    "historyList form form form"
+    "historyList result result result";
+}
+

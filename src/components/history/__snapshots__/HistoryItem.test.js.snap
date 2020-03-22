@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HistoryItem component matches a snapshot 1`] = `
+<div
+  onClick={[Function]}
+>
+  <h2>
+    POST
+  </h2>
+  <p>
+    myApi.com
+  </p>
+</div>
+`;
