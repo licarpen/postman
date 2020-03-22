@@ -5,7 +5,7 @@ exports[`Header component matches a snapshot 1`] = `
   className="Header"
 >
   <h1>
-    Postman
+    POSTMAN
   </h1>
   <h2>
     A serverside application for visualizing responses to RESTful requests

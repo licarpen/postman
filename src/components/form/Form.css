@@ -35,8 +35,9 @@
   .body{
     display: block;
     margin-top: 20px;
+    font-size: 1.5vw;
     width: 100%;
-    height: 30vw;
+    height: 15vw;
     border: lightslategrey 2px solid;
     background: rgb(246, 245, 245);
     overflow: scroll;
