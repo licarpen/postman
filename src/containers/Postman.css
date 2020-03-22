@@ -1,9 +1,21 @@
 .Postman {
   display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: min-content;
-    grid-template-areas: 
-    "historyList form form form"
-    "historyList result result result";
-}
+  margin: auto;
+  width: 100%;
+  grid-template-columns: 1.5fr 3fr;
+  grid-template-rows: min-content;
+  align-items: start;
+  grid-template-areas: 
+  "history form"
+  "result result";
 
+
+    @media screen and (max-width: 1200px){ 
+      grid-template-columns: 100%; 
+      justify-content: center;  
+      grid-template-areas: 
+    "form"
+    "result"
+    "history";
+    }
+}

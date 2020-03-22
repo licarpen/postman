@@ -4,8 +4,10 @@ exports[`HistoryList component matches a snapshot 1`] = `
 <div
   className="HistoryList"
 >
-  <h2>
-    History
+  <h2
+    className="title"
+  >
+    HISTORY
   </h2>
   <ul>
     <li

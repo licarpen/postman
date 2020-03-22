@@ -2,28 +2,77 @@
   grid-area: form;
   margin: auto;
   text-align: center;
-  padding: 15px;
+  padding: 0.5vw;
+  width: 90%;
 
-  input {
-    padding: 10px;
+  .url{
+    display: block;
+    width: 100%;
+    height: 2vw;
+    font-size: 1.5vw;
+    margin-bottom: 2vw;
+
   }
 
-  input[type="radio"]{
-    display: none;
+  input[type="radio"] {
+    padding: 0.5vw;;
+    margin-left: 1vw;
+    width: 1vw;
+    height: 1vw;
   }
 
   label{
-    padding: 5px;
-    margin: 5px;
-    width: 50px;
-    height: 30px;
-    border: solid black 1px;
+    padding: 0.5vw;
+    margin: 0.5vw;
+    width: 5vw;
+    height: 2.5vw;
     background: lightgray;
+    font-size: 1vw;
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 3em;
   }
 
   .body{
     display: block;
+    margin-top: 20px;
+    font-size: 1.5vw;
     width: 100%;
-    height: 200px;
+    height: 15vw;
+    border: lightslategrey 2px solid;
+    background: rgb(246, 245, 245);
+    overflow: scroll;
+  }
+
+  button{
+    margin: 20px;
+
+  }
+
+  @media screen and (max-width: 1200px){ 
+    .url{
+      height: 3vw;
+      font-size: 2vw;
+    }
+  
+    input[type="radio"] {
+      padding: 0.5vw;;
+      margin-left: 2vw;
+      width: 3vw;
+      height: 3vw;
+    }
+  
+    label{
+      padding: 0.5vw;
+      margin: 0.5vw;
+      width: 8vw;
+      height: 5vw;
+      background: lightgray;
+      font-size: 2vw;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .body{
+      margin-top: 3vw;
+    }
   }
 }

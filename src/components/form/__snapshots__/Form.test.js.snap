@@ -6,6 +6,7 @@ exports[`Form component matches a snapshot 1`] = `
   onSubmit={[Function]}
 >
   <input
+    className="url"
     name="url"
     onChange={[Function]}
     placeholder="url"
@@ -76,12 +77,12 @@ exports[`Form component matches a snapshot 1`] = `
     className="body"
     name="body"
     onChange={[Function]}
-    placeholder="body"
+    placeholder="REQUEST BODY (JSON)"
     type="text"
     value="text body to send"
   />
   <button>
-    RESULT
+    GET RESPONSE
   </button>
 </form>
 `;
