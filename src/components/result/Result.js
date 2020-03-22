@@ -4,7 +4,8 @@ import styles from './Result.css';
 
 const Result = ({ result }) => (
   <div className={styles.Result}>
-    <pre>{result}</pre>
+    <h2 className={styles.title}>RESPONSE</h2>
+    <pre className={styles.results}>{result}</pre>
   </div>
 );
 

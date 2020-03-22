@@ -10,8 +10,8 @@ const Form = ({ onSubmit, onChange, url, body, method }) => (
     <input type="radio" name="method" value="PUT" checked={method === 'PUT'} onChange={onChange} /><label htmlFor="PUT">PUT</label>
     <input type="radio" name="method" value="PATCH" checked={method === 'PATCH'} onChange={onChange} /><label htmlFor="PATCH">PATCH</label>
     <input type="radio" name="method" value="DELETE" checked={method === 'DELETE'} onChange={onChange} /><label htmlFor="DELETE">DELETE</label>
-    <input className={styles.body} type="text" name="body" value={body} placeholder="body" onChange={onChange} />
-    <button>RESULT</button>
+    <input className={styles.body} type="text" name="body" value={body} placeholder="REQUEST BODY (JSON)" onChange={onChange} />
+    <button>GET RESPONSE</button>
   </form>
 );
 

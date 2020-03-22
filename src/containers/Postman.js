@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Header from '../components/header/Header';
 import Form from '../components/form/Form';
 import Result from '../components/result/Result';
 import HistoryList from '../components/history/HistoryList';
@@ -37,11 +38,14 @@ export default class Postman extends Component {
     const { url, method, body, result, history } = this.state;
 
     return (
-      <div className={styles.Postman}>
-        <Form url={url} method={method} body={body} onChange={this.handleChange} onSubmit={this.handleSubmit} />
-        <Result result={result} />
-        <HistoryList history={history} onClick={this.handleClick}/>
-      </div>
+      <>
+        <Header/>
+        <div className={styles.Postman}>
+          <Form url={url} method={method} body={body} onChange={this.handleChange} onSubmit={this.handleSubmit} />
+          <Result result={result} />
+          <HistoryList history={history} onClick={this.handleClick}/>
+        </div>
+      </>
     );
   }
 }

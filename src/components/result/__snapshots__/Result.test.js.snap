@@ -4,7 +4,14 @@ exports[`Result component matches a snapshot 1`] = `
 <div
   className="Result"
 >
-  <pre>
+  <h2
+    className="title"
+  >
+    RESPONSE
+  </h2>
+  <pre
+    className="results"
+  >
     sample result
   </pre>
 </div>

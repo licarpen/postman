@@ -1,9 +1,12 @@
 .HistoryList{
   grid-area: history;
   font-family: Arial, Helvetica, sans-serif;
+  width: 100%;
   
   .title {
+    width: 100%;
     text-align: center;
+    align-self: start;
     font-size: 2vw;
   }
   
